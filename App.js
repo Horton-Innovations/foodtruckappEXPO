@@ -2,7 +2,7 @@ import React from 'react';
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { AppLoading, Asset, Font, Icon } from 'expo';
 import AppNavigator from './navigation/AppNavigator';
-import HomeScreen from './screens/HomeScreen';
+import AuthLoadingScreen from './screens/AuthLoadingScreen';
 
 export default class App extends React.Component {
   state = {
@@ -22,7 +22,7 @@ export default class App extends React.Component {
       return (
         <View style={styles.container}>
           {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-          <HomeScreen />
+          <AuthLoadingScreen />
         </View>
       );
     }

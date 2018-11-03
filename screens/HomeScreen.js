@@ -7,26 +7,33 @@ import {
   Text,
   View,
   Button,
+  AsyncStorage,
 } from 'react-native';
 import { WebBrowser } from 'expo';
 
 import { MonoText } from '../components/StyledText';
 
 export default class HomeScreen extends React.Component {
+  constructor() {
+    super();
+  }
   static navigationOptions = {
-    header: null,
+    title: 'Welcome to the app!',
+  };
+
+  _showMoreApp = () => {
+    this.props.navigation.navigate('Other');
+  };
+
+  _signOutAsync = async () => {
+    await AsyncStorage.clear();
+    this.props.navigation.navigate('Auth');
   };
 
   render() {
 
-    _SignIn = () => {
-      console.log("SIgnIn")
-    }
-
-    _SignUp = () => {
-      console.log("Sign Up")
-    }
-
+  const AsyncStorage = '';
+  
     return (
       <View style={styles.container}>
           <View style={styles.welcomeContainer}>
@@ -35,16 +42,8 @@ export default class HomeScreen extends React.Component {
               style={styles.welcomeImage}
             />
           </View>
-          <Button 
-            style={styles.button}
-            title="Sign Up"
-            onPress={_SignIn}
-          />
-          <Button 
-            style={styles.button}
-            title="Sign in"
-            onPress={_SignUp}
-          />
+          <Button title="Show me more of the app" onPress={this._showMoreApp} />
+        <Button title="Actually, sign me out :)" onPress={this._signOutAsync} />
 
       </View>
     );
@@ -68,7 +67,7 @@ const styles = StyleSheet.create({
   },
   welcomeImage: {
     width: 250,
-    height: 700,
+    height: 500,
     resizeMode: 'contain',
     marginTop: 5,
     marginLeft: -10,

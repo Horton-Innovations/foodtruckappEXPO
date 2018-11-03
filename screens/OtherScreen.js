@@ -1,17 +1,22 @@
 import React from 'react';
-import { ScrollView, StyleSheet, Text } from 'react-native';
+import { ScrollView, StyleSheet, Text, StatusBar, Button, AsyncStorage } from 'react-native';
 
 export default class OtherScreen extends React.Component {
   static navigationOptions = {
     title: 'Other Screen',
   };
 
+  _signOutAsync = async () => {
+    await AsyncStorage.clear();
+    this.props.navigation.navigate('Auth');
+  };
+
   render() {
+
     return (
       <ScrollView style={styles.container}>
-        <Text>This is the Links Screen</Text>
-        {/* Go ahead and delete ExpoLinksView and replace it with your
-           * content, we just wanted to provide you with some helpful links */}
+      <Button title="I'm done, sign me out" onPress={this._signOutAsync} />
+        <StatusBar barStyle="default" />
       </ScrollView>
     );
   }

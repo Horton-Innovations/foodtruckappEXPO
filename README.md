@@ -1,4 +1,8 @@
-# We are starting with a Expo app with multiple screens.
+# We are starting with an Expo app with multiple screens.
+
+## We plan to use
+- React Navigation
+- Firebase
 
 #### Resources
 - https://facebook.github.io/react-native/docs/getting-started

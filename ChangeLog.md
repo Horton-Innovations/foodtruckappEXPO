@@ -2,4 +2,5 @@
 
 
 ### November 2nd 2018
+- Added Auth Flow
 - Configured App

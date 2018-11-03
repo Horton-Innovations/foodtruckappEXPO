@@ -6,6 +6,7 @@ import {
   StyleSheet,
   Text,
   View,
+  Button,
 } from 'react-native';
 import { WebBrowser } from 'expo';
 
@@ -17,17 +18,33 @@ export default class HomeScreen extends React.Component {
   };
 
   render() {
+
+    _SignIn = () => {
+      console.log("SIgnIn")
+    }
+
+    _SignUp = () => {
+      console.log("Sign Up")
+    }
+
     return (
       <View style={styles.container}>
-        <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
           <View style={styles.welcomeContainer}>
             <Image
               source={require('../assets/images/ftlogo.png')}
               style={styles.welcomeImage}
             />
           </View>
-
-        </ScrollView>
+          <Button 
+            style={styles.button}
+            title="Sign Up"
+            onPress={_SignIn}
+          />
+          <Button 
+            style={styles.button}
+            title="Sign in"
+            onPress={_SignUp}
+          />
 
       </View>
     );
@@ -39,7 +56,7 @@ export default class HomeScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#fe4e00',
   },
   contentContainer: {
     paddingTop: 30,
@@ -56,6 +73,12 @@ const styles = StyleSheet.create({
     marginTop: 5,
     marginLeft: -10,
   },
+  button: {
+    height: 50,
+    width: 25,
+    backgroundColor: '#618884',
+
+  }
   // tabBarInfoContainer: {
   //   position: 'absolute',
   //   bottom: 0,

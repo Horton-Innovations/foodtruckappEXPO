@@ -1,6 +1,9 @@
 # We are starting with an Expo app with multiple screens.
 
-## We plan to use
+### Main branch for development
+`realease-01`
+
+### We plan to use
 - React Navigation
 - Firebase
 
